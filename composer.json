@@ -1,5 +1,5 @@
 {
-    "name": "phpmetrics/phpmetrics",
+    "name": "mathieupetrini/phpmetrics",
     "replace": {
         "halleck45/phpmetrics": "*",
         "halleck45/php-metrics": "*"
@@ -22,7 +22,7 @@
     ],
     "homepage": "http://www.phpmetrics.org",
     "support": {
-        "issues": "https://github.com/PhpMetrics/PhpMetrics/issues"
+        "issues": "https://github.com/mathieupetrini/PhpMetrics/issues"
     },
     "autoload": {
         "psr-0": {

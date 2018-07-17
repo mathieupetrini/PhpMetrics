@@ -51,6 +51,10 @@ class RoleOfMethodDetectorTest extends \PHPUnit_Framework_TestCase
             $examples['setter with scalar hint and return void'] = ['setter', '<?php class A { function setName(string $name): void { $this->name = $name; } }'];
             $examples['getter with return object'] = ['getter', '<?php class A { function getName(): Name { return $this->name; } }'];
             $examples['setter with object hint and return void'] = ['setter', '<?php class A { function setName(Name $name): void { $this->name = $name; } }'];
+            $examples['setter with object hint and return self'] = ['setter', '<?php class A { function setName(Name $name): self { $this->name = $name; return $this;} }'];
+        }
+        if (version_compare(PHP_VERSION, '7.1.0') >= 0) {
+            $examples['getter with return object or null'] = ['getter', '<?php class A { function getName(): ?Name { return $this->name; } }'];
         }
         return $examples;
     }

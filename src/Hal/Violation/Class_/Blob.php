@@ -30,7 +30,9 @@ class Blob implements Violation
         $this->metric = $metric;
 
         $suspect = 0;
-        if ($metric->get('nbMethodsPublic') >= 8) {
+        if (
+            $metric->get('nbMethodsPublic') >= ($config->has('default-rules-nbMethodsPublic') ? $config->get('default-rules-nbMethodsPublic') : 8)
+        ) {
             $suspect++;
         }
 

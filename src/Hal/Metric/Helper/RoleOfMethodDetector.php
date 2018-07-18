@@ -45,6 +45,13 @@ class RoleOfMethodDetector
                 'PhpParser\\Node\\Expr\\Variable',
                 'PhpParser\\Node\\NullableType',
                 'PhpParser\\Node\\Name\\FullyQualified'
+            ],
+            [
+                'PhpParser\\Node\\Stmt\\ClassMethod',
+                'PhpParser\\Node\\Stmt\\Return_',
+                'PhpParser\\Node\\Expr\\MethodCall',
+                'PhpParser\\Node\\Expr\\PropertyFetch',
+                'PhpParser\\Node\\Expr\\Variable'
             ]
         ],
         'setter' => [
@@ -129,6 +136,21 @@ class RoleOfMethodDetector
                 'PhpParser\\Node\\Param',
                 'PhpParser\\Node\\Expr\\Variable',
                 'PhpParser\\Node\\Name\\FullyQualified',
+            ],
+            [
+                'PhpParser\\Node\\Stmt\\ClassMethod',
+                'PhpParser\\Node\\Stmt\\Return_',
+                'PhpParser\\Node\\Expr\\Variable',
+                'PhpParser\\Node\\Stmt\\Expression',
+                'PhpParser\\Node\\Expr\\MethodCall',
+                'PhpParser\\Node\\Arg',
+                'PhpParser\\Node\\Expr\\Variable',
+                'PhpParser\\Node\\Expr\\PropertyFetch',
+                'PhpParser\\Node\\Expr\\Variable',
+                'PhpParser\\Node\\Name\\FullyQualified',
+                'PhpParser\\Node\\Param',
+                'PhpParser\\Node\\Expr\\Variable',
+                'PhpParser\\Node\\Name\\FullyQualified'
             ]
         ]
     ];

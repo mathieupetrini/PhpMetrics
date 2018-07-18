@@ -2,6 +2,7 @@
 namespace Hal\Violation;
 
 
+use Hal\Application\Config\Config;
 use Hal\Metric\Metric;
 
 interface Violation
@@ -19,7 +20,7 @@ interface Violation
     /**
      * @param Metric $metric
      */
-    public function apply(Metric $metric);
+    public function apply(Metric $metric, Config $config);
 
     /**
      * @return integer

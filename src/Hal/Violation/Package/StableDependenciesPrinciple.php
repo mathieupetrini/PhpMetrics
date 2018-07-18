@@ -2,6 +2,7 @@
 
 namespace Hal\Violation\Package;
 
+use Hal\Application\Config\Config;
 use Hal\Metric\Metric;
 use Hal\Metric\PackageMetric;
 use Hal\Violation\Violation;
@@ -19,7 +20,7 @@ class StableDependenciesPrinciple implements Violation
         return 'Stable Dependencies Principle';
     }
 
-    public function apply(Metric $metric)
+    public function apply(Metric $metric, Config $config)
     {
         if (! $metric instanceof PackageMetric) {
             return;

@@ -2,6 +2,7 @@
 
 namespace Violation\Package;
 
+use Hal\Application\Config\Config;
 use Hal\Metric\Metric;
 use Hal\Metric\PackageMetric;
 use Hal\Violation\Package\StableDependenciesPrinciple;
@@ -19,7 +20,7 @@ class StableDependenciesPrincipleTest extends PHPUnit_Framework_TestCase
 
         $object = new StableDependenciesPrinciple();
 
-        $object->apply($metric->reveal());
+        $object->apply($metric->reveal(), new Config());
 
         $metric->get('violations')->shouldNotHaveBeenCalled();
     }
@@ -43,7 +44,7 @@ class StableDependenciesPrincipleTest extends PHPUnit_Framework_TestCase
 
         $object = new StableDependenciesPrinciple();
 
-        $object->apply($metric->reveal());
+        $object->apply($metric->reveal(), new Config());
 
         $this->assertSame($expectedViolationCount, $violations->count());
     }

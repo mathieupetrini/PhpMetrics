@@ -1,6 +1,7 @@
 <?php
 namespace Test\Hal\Violation\Class_;
 
+use Hal\Application\Config\Config;
 use Hal\Violation\Class_\Blob;
 use Hal\Violation\Violations;
 
@@ -22,7 +23,7 @@ class BlobTest extends \PHPUnit_Framework_TestCase
         $class = $prophet->reveal();
 
         $object = new Blob();
-        $object->apply($class);
+        $object->apply($class, new Config());
         $this->assertEquals($expected, $class->get('violations')->count());
     }
 

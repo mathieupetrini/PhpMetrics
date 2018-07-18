@@ -57,7 +57,7 @@ class RoleOfMethodDetectorTest extends \PHPUnit_Framework_TestCase
             $examples['adder with object hint and return self'] = ['setter', '<?php class A { function addName(Name $name): Name { $this->name->add($name); return $name;} }'];
         }
         if (version_compare(PHP_VERSION, '7.1.0') >= 0) {
-            $examples['getter with return object or null'] = ['getter', '<?php class A { function getName(): ?Name { return $this->name; } }'];
+            $examples['getter with return object or null'] = ['getter', '<?php class A { function getNameCoucou(): ?Name { return $this->name; } }'];
         }
         return $examples;
     }

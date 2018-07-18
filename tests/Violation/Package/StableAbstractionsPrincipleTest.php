@@ -2,6 +2,7 @@
 
 namespace Violation\Package;
 
+use Hal\Application\Config\Config;
 use Hal\Metric\Metric;
 use Hal\Metric\PackageMetric;
 use Hal\Violation\Package\StableAbstractionsPrinciple;
@@ -19,7 +20,7 @@ class StableAbstractionsPrincipleTest extends PHPUnit_Framework_TestCase
 
         $object = new StableAbstractionsPrinciple();
 
-        $object->apply($metric->reveal());
+        $object->apply($metric->reveal(), new Config());
 
         $metric->get('violations')->shouldNotHaveBeenCalled();
     }
@@ -38,7 +39,7 @@ class StableAbstractionsPrincipleTest extends PHPUnit_Framework_TestCase
 
         $object = new StableAbstractionsPrinciple();
 
-        $object->apply($metric);
+        $object->apply($metric, new Config());
 
         $this->assertSame($expectedViolationCount, $metric->get('violations')->count());
     }

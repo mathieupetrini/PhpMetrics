@@ -2,6 +2,7 @@
 
 namespace Hal\Violation\Package;
 
+use Hal\Application\Config\Config;
 use Hal\Metric\Metric;
 use Hal\Metric\PackageMetric;
 use Hal\Violation\Violation;
@@ -16,7 +17,7 @@ class StableAbstractionsPrinciple implements Violation
         return 'Stable Abstractions Principle';
     }
 
-    public function apply(Metric $metric)
+    public function apply(Metric $metric, Config $config)
     {
         if (! $metric instanceof PackageMetric) {
             return;

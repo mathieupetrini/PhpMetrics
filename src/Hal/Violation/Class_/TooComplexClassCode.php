@@ -1,6 +1,7 @@
 <?php
 namespace Hal\Violation\Class_;
 
+use Hal\Application\Config\Config;
 use Hal\Metric\ClassMetric;
 use Hal\Metric\Metric;
 use Hal\Violation\Violation;
@@ -21,7 +22,7 @@ class TooComplexClassCode implements Violation
         return 'Too complex class code';
     }
 
-    public function apply(Metric $metric)
+    public function apply(Metric $metric, Config $config)
     {
         if (! $metric instanceof ClassMetric) {
             return;

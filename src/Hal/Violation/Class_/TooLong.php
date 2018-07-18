@@ -29,7 +29,7 @@ class TooLong implements Violation
 
         $this->metric = $metric;
 
-        if ($metric->get('lloc') >= 200) {
+        if ($metric->get('lloc') >= ($config->has('default-rules-lloc') ? $config->get('default-rules-lloc') : 200)) {
             $metric->get('violations')->add($this);
         }
     }

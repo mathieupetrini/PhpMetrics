@@ -1,9 +1,5 @@
 {
     "name": "mathieupetrini/phpmetrics",
-    "replace": {
-        "halleck45/phpmetrics": "*",
-        "halleck45/php-metrics": "*"
-    },
     "description": "Static analyzer tool for PHP : Coupling, Cyclomatic complexity, Maintainability Index, Halstead's metrics... and more !",
     "license": "MIT",
     "keywords": [
